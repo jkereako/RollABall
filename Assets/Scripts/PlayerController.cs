@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     player = GetComponent<Rigidbody>();
   }
 
+  // `FixedUpdate` is used for physics computations
   void FixedUpdate() {
     float horizontalAxis = Input.GetAxis("Horizontal");
     float verticalAxis = Input.GetAxis("Vertical");
