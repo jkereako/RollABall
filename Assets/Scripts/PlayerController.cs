@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-  private Rigidbody player;
+  // Public member variables are visible in the Unity editor. These are analogous to IBOutlets in
+  // Xcode/InterfaceBuilder
+  public float speed;
+
+  // The default access modifier is `private`.
+  Rigidbody player;
 
   void Start() {
     player = GetComponent<Rigidbody>();
@@ -14,6 +19,6 @@ public class PlayerController : MonoBehaviour {
     float verticalAxis = Input.GetAxis("Vertical");
     Vector3 movement = new Vector3(horizontalAxis, 0.0f, verticalAxis);
 
-    player.AddForce(movement);
+    player.AddForce(movement * speed);
   }
 }
