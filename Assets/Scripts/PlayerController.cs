@@ -20,4 +20,10 @@ public class PlayerController : MonoBehaviour {
 
     player.AddForce(movement * speed);
   }
+
+  void OnTriggerEnter(Collider other) {
+    if (other.gameObject.CompareTag("Pick up")) {
+      other.gameObject.SetActive(false);
+    }
+  }
 }
